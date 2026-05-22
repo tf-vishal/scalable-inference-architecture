@@ -383,3 +383,13 @@ target
 
 .vscode
 .mypy*
+# Terraform SSH keys
+terraform/worker-key
+terraform/worker-key.pub
+
+# Terraform state
+*.tfstate
+*.tfstate.backup
+terraform/.terraform/
+
+.terraform*

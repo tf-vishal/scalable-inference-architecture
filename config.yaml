@@ -28,15 +28,19 @@ workers:
   - name: iii-http
     config:
       port: 3111
-      host: 127.0.0.1
-      default_timeout: 30000
+      host: 0.0.0.0
+      default_timeout: 120000
       concurrency_request_limit: 1024
       cors:
         allowed_origins:
-        - '*'
+          - "*"
         allowed_methods:
-        - GET
-        - POST
-        - PUT
-        - DELETE
-        - OPTIONS
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - OPTIONS
+  - name: caller-worker
+    worker_path: /home/tfvishal/Projects/alchemyst-devops-assignment/workers/caller-worker
+  - name: math-worker
+    worker_path: /home/tfvishal/Projects/alchemyst-devops-assignment/workers/inference-worker
